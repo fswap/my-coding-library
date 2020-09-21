@@ -1,0 +1,18 @@
+vector<vector<int>> board(n,vector<int> (n,0))
+
+int board[n][n]={0};
+
+N=4
+
+putting the queen over (r,c) is safe or not
+
+r1->    D 0 C 0
+r2->    0 D C 0
+r3->    0 0 X 0
+r4->    0 T 0 0
+
+D i--,j-- from X(r,c)
+
+from X(r,c) i am doing i++ and j-- => T diagonal
+
+X is (r,c)
