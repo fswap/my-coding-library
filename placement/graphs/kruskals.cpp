@@ -65,7 +65,7 @@ void solve()
     for(i=0;i<m;i++)
     {
         int x,y,w;
-        cin>>x>>y>>w;
+        cin>>x>>y>>w;  // when edges are 0 based
         edges.push_back({w,{x,y}});
     }
     kruskals(n,edges);
