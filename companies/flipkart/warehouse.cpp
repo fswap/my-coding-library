@@ -4,11 +4,12 @@ using namespace std;
 const int INF=1e6;
 
 vector<vector<int>> adj;
-int n;
+vector<int> ware;
+int n,num;
 
 void warshall()
 {
-	int i,j,k;
+	int i,j,k,ans=INF;
 	for(k=0;k<n;k++)
 	{
 		for(i=0;i<n;i++)
@@ -18,15 +19,25 @@ void warshall()
 			adj[i][j]=adj[i][k]+adj[k][j];
 		}
 	}
+    for(i=0;i<ware.size();i++)
+    {
+        for(j=i+1;j<ware.size();j++)
+        {
+            ans=min(ans,adj[ware[i]][ware[j]]);
+        }
+    }
+    cout<<ans<<endl;
 }
 
 void solve()
 {
-    int i,e,k;
-    cin>>n>>k;
+    int i,e,num,j;
+    cin>>n>>num;
     adj=vector<vector<int>> (n,vector<int> (n,INF));
-    vector<int> ware(k);
-    for(i=0;i<k;i++)
+    for(i=0;i<n;i++)
+    adj[i][i]=0;
+    ware=vector<int> (num);
+    for(i=0;i<num;i++)
     cin>>ware[i];
     cin>>e;
     while(e--)
