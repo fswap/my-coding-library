@@ -33,16 +33,29 @@ const int N = 1e5+1;
 
 void solve()
 {
-    int i,j,n,m;
-    cin>>n;
+	string s;
+ 	getline(cin,s);
+	string src="",dest="";
+    int i,flag=1,n=s.size();
+	dbg(s);
+    for(i=0;i<n;i++)
+    {
+        if(s[i]==' ')
+            flag=0;
+        else if(flag)
+        src+=s[i];
+        else
+        dest+=s[i];
+    }
+    cout<<src<<endl<<dest<<endl;
 }
 
 int32_t main()
 {
-    ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
-    int t;
-    t=1;
-    cin>>t;
-    while(t--)
-        solve();
+	ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+	int t;
+	t=1;
+	//cin>>t;
+	while(t--)
+		solve();
 }

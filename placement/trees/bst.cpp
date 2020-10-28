@@ -35,10 +35,17 @@ void inorder(Node* root)
 int main()
 {
     Node *root=NULL;
-    root=insert(2,root);
-    insert(1,root);
-    insert(4,root);
-    insert(3,root);
-    insert(5,root);
+    root=insert(45,root);
+    insert(36,root);
+    insert(76,root);
+    insert(23,root);
+    insert(89,root);
+    insert(115,root);
+    insert(98,root);
+    insert(39,root);
+    insert(41,root);
+    insert(56,root);
+    insert(69,root);
+    insert(48,root);
     inorder(root);cout<<endl;
 }
